@@ -1,0 +1,20 @@
+{
+  "name": "hr-app-server",
+  "version": "1.0.0",
+  "description": "server code for hr app project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fizirvin/hr-app-server.git"
+  },
+  "keywords": [],
+  "author": "Irvin Fiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fizirvin/hr-app-server/issues"
+  },
+  "homepage": "https://github.com/fizirvin/hr-app-server#readme"
+}
