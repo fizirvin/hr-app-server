@@ -16,5 +16,21 @@
   "bugs": {
     "url": "https://github.com/fizirvin/hr-app-server/issues"
   },
-  "homepage": "https://github.com/fizirvin/hr-app-server#readme"
+  "homepage": "https://github.com/fizirvin/hr-app-server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^15.0.0",
+    "graphql-tools": "^5.0.0",
+    "mongoose": "^5.9.12"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "nodemon": "^2.0.3"
+  }
 }
