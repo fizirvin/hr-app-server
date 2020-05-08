@@ -3,42 +3,29 @@ import { resolvers } from "./resolvers.js";
 
 const typeDefs = `
 type Query {
-    labels: [Label]
-    plastics: [Plastic]
+    profiles: [Profile]
 }
 
-type Label {
+type Profile {
     _id: ID!
-    model: String!
-    serial: String!
-    partNumber: String!
-    type: String!
+    number: String!
+    firstname: String!
+    lastname: String!
 }
 
-type Plastic {
-    _id: ID!
-    model: String! 
-}
+
 
 type Mutation { 
-    newLabel(_id: ID, input: NewLabel): Label
-    updateLabel(_id: ID, input: NewLabel): Label
+    newProfile(_id: ID, input: NewProfile ): Profile
+    updateProfile(_id: ID, input: NewProfile ): Profile
 
-    newPlastic(_id: ID, input: NewPlastic): Plastic
-    updatePlastic(_id: ID, input: NewPlastic): Plastic
 }
 
-input NewLabel {
-    model: String!
-    serial: String!
-    partNumber: String!
-    type: String!
+input NewProfile {
+    number: String!
+    firstname: String!
+    lastname: String!
 }
-
-input NewPlastic {
-    model: String!
-}
-
 
 
 `;

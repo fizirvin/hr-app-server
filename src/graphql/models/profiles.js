@@ -1,22 +1,18 @@
 import {Schema, model } from 'mongoose';
 
-const labelSchema = new Schema({
-  model:{
+const profileSchema = new Schema({
+  number:{
     type: String,
     required: true
   },
-  serial:{
+  firstname:{
     type: String,
     required: true
   },
-  partNumber:{
-    type: String,
-    required: true
-  },
-  type:{
+  lastname:{
     type: String,
     required: true
   }
 });
 
-export default model('labels', labelSchema);
+export default model('profiles', profileSchema);
