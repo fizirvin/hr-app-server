@@ -6,7 +6,7 @@ import { resolvers }  from './graphql/resolvers.js'
 import schema from './graphql/schema.js';
 import { api } from '../config.js';
 import { connect } from './database';
-
+import router from './src/routes/s3.routes';
 
 
 
@@ -19,6 +19,8 @@ app.get('/', (req, res) =>{
         message: 'Hello World'
     })
   });
+
+  app.use(router);
 
   app.use('/graph', graphqlHTTP({
     graphiql: true,

@@ -12,6 +12,26 @@ const profileSchema = new Schema({
   lastname:{
     type: String,
     required: true
+  },
+  entry:{
+    type: Date,
+    required: true
+  },
+  department:{
+    type: String,
+    required: true
+  },
+  area:{
+    type: String,
+    required: true
+  },
+  position:{
+    type: String,
+    required: true
+  },
+  picture_URL:{
+    type: String,
+    required: false
   }
 });
 

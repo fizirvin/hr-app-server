@@ -2,6 +2,9 @@ import { makeExecutableSchema } from "graphql-tools";
 import { resolvers } from "./resolvers.js";
 
 const typeDefs = `
+
+scalar Date
+
 type Query {
     profiles: [Profile]
 }
@@ -11,6 +14,11 @@ type Profile {
     number: String!
     firstname: String!
     lastname: String!
+    entry: Date!
+    department: String!
+    area: String!
+    position: String!
+    picture_URL: String
 }
 
 
@@ -25,6 +33,11 @@ input NewProfile {
     number: String!
     firstname: String!
     lastname: String!
+    entry: Date!
+    department: String!
+    area: String!
+    position: String!
+    picture_URL: String
 }
 
 
