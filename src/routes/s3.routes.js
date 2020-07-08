@@ -2,12 +2,12 @@ import aws from 'aws-sdk'
 import multer from 'multer'
 import multerS3 from 'multer-s3'
 import { Router } from 'express'; 
-import { awsconfig } from '../config.js';
+import { awsconfig } from '../../config.js';
 
 const secretAccessKey = awsconfig.secretAccessKey
 const accessKeyId = awsconfig.accessKeyId
 const region = awsconfig.region
-const bucket = aws.config.bucket
+const bucket = awsconfig.bucket
 
 const router = new Router();
  
@@ -49,7 +49,7 @@ export const fileFilter = (req, file, cb) => {
  
 const upload = multer({
   storage: storage,
-  limits: {fileSize: 1000000},
+  limits: {fileSize: 50000},
   fileFilter: fileFilter
 }).single('image');
 
@@ -58,6 +58,7 @@ router.post('/image-upload', (req, res) => {
     upload(req, res, (err) => {
       if (err) {
         err.message = 'The file is so heavy for my service';
+        
         return res.send(err);
     }
         console.log(req.file);

@@ -6,7 +6,7 @@ import { resolvers }  from './graphql/resolvers.js'
 import schema from './graphql/schema.js';
 import { api } from '../config.js';
 import { connect } from './database';
-import router from './src/routes/s3.routes';
+import router from './routes/s3.routes.js'
 
 
 
