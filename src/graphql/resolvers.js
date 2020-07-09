@@ -1,9 +1,16 @@
 import profiles from './models/profiles.js';
+import shortDate from '../functions/shortDate.js'
 
 export const resolvers = {
   Query: {
     async profiles(){
-      return await profiles.find();
+
+      const profile = await profiles.find();
+      const profileFormat = profile.map(item =>{
+        const entry = shortDate(item.entry)
+        return {...item._doc, entry }
+      })
+      return profileFormat
     }
   },
   Mutation: {
