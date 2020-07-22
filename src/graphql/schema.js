@@ -6,7 +6,7 @@ const typeDefs = `
 scalar Date
 
 type Query {
-    profiles: [Profile]
+    profiles: [ProfileQuery]
 }
 
 type Profile {
@@ -26,11 +26,28 @@ type Profile {
     picture_URL: String
 }
 
+type ProfileQuery {
+    _id: ID!
+    number: String!
+    firstname: String!
+    lastname: String!
+    gender: String!
+    entry: Date!
+    department: String!
+    area: String!
+    team: String!
+    position: String!
+    active: Boolean!
+    createdAt: Date!
+    updatedAt: Date
+    picture_URL: String
+    entryNum: Date!
+}
 
 
 type Mutation { 
-    newProfile(_id: ID, input: NewProfile ): Profile
-    updateProfile(_id: ID, input: NewProfile ): Profile
+    newProfile(_id: ID, input: NewProfile ): ProfileQuery
+    updateProfile(_id: ID, input: UpdateProfile ): ProfileQuery
 
 }
 
@@ -43,6 +60,19 @@ input NewProfile {
     department: String!
     area: String!
     position: String!
+    picture_URL: String
+}
+
+input UpdateProfile {
+    firstname: String
+    lastname: String
+    gender: String
+    entry: Date
+    department: String
+    area: String
+    team: String
+    position: String
+    active: Boolean
     picture_URL: String
 }
 

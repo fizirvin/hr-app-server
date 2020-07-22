@@ -1,6 +1,7 @@
 import profiles from './models/profiles.js';
 import shortDate from '../functions/shortDate.js'
 import zonedD from '../functions/zonedD'
+import shorDateNum from '../functions/shortDateNum.js'
 
 
 export const resolvers = {
@@ -10,7 +11,8 @@ export const resolvers = {
       const profile = await profiles.find();
       const profileFormat = profile.map(item =>{
         const entry = shortDate(item.entry)
-        return {...item._doc, entry }
+        const entryNum = shorDateNum(item.entry)
+        return {...item._doc, entry, entryNum }
       })
       return profileFormat
     }
@@ -47,11 +49,26 @@ export const resolvers = {
       const { entry, createdAt } = profile._doc
       
       const short = shortDate(entry)
+      const entryNum = shorDateNum(entry) 
 
-      return { ...profile._doc, entry: short};
+      return { ...profile._doc, entry: short, entryNum};
     },
     async updateProfile(_,{ _id, input }){
-      return await profiles.findByIdAndUpdate(_id,input, {new: true });
+      console.log('hola', input)
+      const date = new Date();
+      const zonedDate = zonedD(date);
+      const object ={
+        ...input,
+        updatedAt: zonedDate,
+      }
+
+      const updateProfile = await profiles.findByIdAndUpdate(_id,object, {new: true });
+      console.log(updateProfile, _id)
+      const { entry } = updateProfile._doc
+      const short = shortDate(entry)
+      const entryNum = shorDateNum(entry) 
+
+      return {...updateProfile._doc, entry: short, entryNum }
     }
   }
 }
