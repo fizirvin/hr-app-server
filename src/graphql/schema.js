@@ -14,10 +14,15 @@ type Profile {
     number: String!
     firstname: String!
     lastname: String!
+    gender: String!
     entry: Date!
     department: String!
     area: String!
+    team: String!
     position: String!
+    active: Boolean!
+    createdAt: Date!
+    updatedAt: Date
     picture_URL: String
 }
 
@@ -30,9 +35,10 @@ type Mutation {
 }
 
 input NewProfile {
-    number: String!
+    team: String!
     firstname: String!
     lastname: String!
+    gender: String!
     entry: Date!
     department: String!
     area: String!
