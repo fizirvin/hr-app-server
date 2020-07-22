@@ -54,7 +54,7 @@ export const resolvers = {
       return { ...profile._doc, entry: short, entryNum};
     },
     async updateProfile(_,{ _id, input }){
-      console.log('hola', input)
+      
       const date = new Date();
       const zonedDate = zonedD(date);
       const object ={
