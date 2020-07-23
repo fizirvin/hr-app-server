@@ -7,6 +7,7 @@ scalar Date
 
 type Query {
     profiles: [ProfileQuery]
+    profilesLabels( team: String ): [ProfileLabelsQuery]
 }
 
 type Profile {
@@ -42,6 +43,18 @@ type ProfileQuery {
     updatedAt: Date
     picture_URL: String
     entryNum: Date!
+}
+
+type ProfileLabelsQuery {
+    _id: ID!
+    number: String!
+    firstname: String!
+    lastname: String!
+    gender: String!
+    team: String!
+    position: String!
+    active: Boolean!
+    picture_URL: String
 }
 
 

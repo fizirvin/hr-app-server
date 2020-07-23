@@ -15,6 +15,9 @@ export const resolvers = {
         return {...item._doc, entry, entryNum }
       })
       return profileFormat
+    },
+    async profilesLabels(_,{ team }){
+      return await profiles.find({ active: true, team }, null, {sort: {team: -1, firstname: 1}});
     }
   },
   Mutation: {
