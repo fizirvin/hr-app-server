@@ -8,6 +8,12 @@ scalar Date
 type Query {
     profiles: [ProfileQuery]
     profilesLabels( team: String ): [ProfileLabelsQuery]
+    workers( inspector: ID, operator: ID ): Workers
+}
+
+type Workers{
+    inspector: Profile
+    operator: Profile
 }
 
 type Profile {

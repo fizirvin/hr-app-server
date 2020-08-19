@@ -18,6 +18,11 @@ export const resolvers = {
     },
     async profilesLabels(_,{ team }){
       return await profiles.find({ active: true, team }, null, {sort: {team: -1, firstname: 1}});
+    },
+    async workers(_,{inspectorId, operatorId }){
+      const inspector = await profiles.findById(inspectorId)
+      const operator = await profiles.findById(operatorId)
+      return { inspector, operator }
     }
   },
   Mutation: {
