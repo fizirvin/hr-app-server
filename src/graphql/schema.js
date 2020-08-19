@@ -8,7 +8,7 @@ scalar Date
 type Query {
     profiles: [ProfileQuery]
     profilesLabels( team: String ): [ProfileLabelsQuery]
-    workers( inspector: ID, operator: ID ): Workers
+    workers( inspectorId: ID, operatorId: ID ): Workers
 }
 
 type Workers{
