@@ -23,7 +23,7 @@ app.get('/', (req, res) =>{
   app.use(router);
 
   app.use('/graph', graphqlHTTP({
-    graphiql: true,
+    graphiql: false,
     schema: schema,
     rootValue: resolvers,
     customFormatErrorFn(err) {
