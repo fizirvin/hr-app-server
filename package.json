@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/fizirvin/hr-app-server#readme",
   "dependencies": {
-    "aws-sdk": "^2.710.0",
+    "aws-sdk": "^2.814.0",
     "cors": "^2.8.5",
     "date-fns": "^2.14.0",
     "date-fns-tz": "^1.0.10",
